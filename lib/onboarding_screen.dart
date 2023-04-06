@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:onboarding_animation/components/onboard_content.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -9,7 +11,31 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
+  void initState() {
+    super.initState();
+
+    Future.delayed(Duration.zero, () {
+      showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        builder: (_) => const OnboardContent(),
+      );
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        systemOverlayStyle: SystemUiOverlayStyle.light,
+      ),
+      body: Image.asset(
+        'assets/bg.png',
+        width: double.infinity,
+        fit: BoxFit.cover,
+      ),
+    );
   }
 }
