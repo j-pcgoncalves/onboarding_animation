@@ -18,6 +18,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       showModalBottomSheet(
         context: context,
         isScrollControlled: true,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(42),
+            topRight: Radius.circular(42),
+          ),
+        ),
         builder: (_) => const OnboardContent(),
       );
     });
