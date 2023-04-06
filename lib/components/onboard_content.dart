@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:onboarding_animation/components/landing_content.dart';
+import 'package:onboarding_animation/components/sign_up_form.dart';
 
 class OnboardContent extends StatefulWidget {
   const OnboardContent({super.key});
@@ -39,6 +40,7 @@ class _OnboardContentState extends State<OnboardContent> {
                   controller: _pageController,
                   children: const [
                     LandingContent(),
+                    SignUpForm(),
                   ],
                 ),
               ),
