@@ -22,6 +22,17 @@ class SignUpForm extends StatelessWidget {
               height: 32,
             ),
             const _TextField(label: 'Email address', icon: Icons.email),
+            const SizedBox(height: 16),
+            const _TextField(
+              label: 'Password',
+              icon: Icons.lock,
+              hidden: true,
+            ),
+            const SizedBox(height: 200),
+            Text(
+              'Already have an account? Sign in.',
+              style: TextStyle(fontSize: 16, color: Colors.blueGrey.shade300),
+            ),
           ],
         ),
       ),
